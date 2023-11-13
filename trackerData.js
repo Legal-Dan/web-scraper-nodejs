@@ -1,10 +1,10 @@
 function trackerData() {
     return [
-        {
-            name: "Guards Guards!",
-            productPage: "https://www.amazon.co.uk/Guards-Discworld-City-Watch-Collection/dp/1473200180/",
-            identifier: ".a-color-price"
-        },
+        // {
+        //     name: "Guards Guards!",
+        //     productPage: "https://www.amazon.co.uk/Guards-Discworld-City-Watch-Collection/dp/1473200180/",
+        //     identifier: ".a-color-price"
+        // },
         {
             name: "Cyberpunk Red RPG Jumpstart Kit",
             productPage: "https://magicmadhouse.co.uk/r-talsorian-games-cyberpunk-red-jumpstart-kit",

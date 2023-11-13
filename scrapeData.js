@@ -1,12 +1,6 @@
-const axios = require("axios");
 const cheerio = require("cheerio");
-
-async function getHTML(url) {
-    const { data } = await axios.get(url).catch(() => {
-        console.log("Couldn't get the page ☹️");
-    });
-    return data;
-}
+const Nightmare = require('nightmare');
+const nightmare = Nightmare();
 
 function scrapePrice(html, identifier){
     const $ = cheerio.load(html);
@@ -14,10 +8,24 @@ function scrapePrice(html, identifier){
         .first()
         .text()
         .trim();
+    return(price.toString());
+}
+
+async function getHTML(url, identifier)  {
+    let price = await nightmare
+        .goto(url)
+        .wait(5000)
+        .evaluate(function () {
+            return document.body.outerHTML;
+        })
+        .end()
+        .then(function (result) {
+            return scrapePrice(result, identifier);
+        })
+
     return price;
 }
 
 module.exports = {
-    getHTML,
-    scrapePrice
+    getHTML
 }
