@@ -2,7 +2,7 @@ const axios = require("axios");
 
 async function convertToGBP(amount, currencyFrom){
     const rate = await getCurrentRates(currencyFrom)
-    console.log(`If the cost is €${amount}, and the exchange rate is €1:£${rate}, then the cost is £${(amount * rate).toFixed(2)}`)
+    console.log(`If the cost is ${currencyFrom} ${amount}, and the exchange rate is ${currencyFrom}1:£${rate}, then the cost is £${(amount * rate).toFixed(2)}`)
     return Number((amount * rate).toFixed(2))
 }
 

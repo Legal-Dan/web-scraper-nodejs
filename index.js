@@ -5,10 +5,8 @@ const currencyStringToNumberInGbp = require("./currencyConversions.js");
 const {wait} = require("nightmare/lib/actions");
 
 async function runApp() {
-    debugger;
     for (const entry of trackerData) {
-        debugger;
-        const priceString = await scrapeData.getHTML(entry.productPage, entry.identifier);
+        const priceString = await scrapeData.getHTMLSelenium(entry.productPage, entry.identifier);
         const currentPrice = await currencyStringToNumberInGbp(priceString);
         console.log("--------------")
         console.log(entry.name)
