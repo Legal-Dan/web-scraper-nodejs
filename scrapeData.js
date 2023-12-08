@@ -68,7 +68,7 @@ function scrapePrice(html, identifier){
 }
 
 function scrapeDTRPGPrice(html, identifier){
-    return html.split(identifier)[2].split(" ")[0].toString();
+    return html.split(identifier)[1].split(" ")[0].toString();
 }
 
 module.exports = {
