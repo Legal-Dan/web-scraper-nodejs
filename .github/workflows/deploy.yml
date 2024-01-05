@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run app
-        run: SQL_PASSWORD=${{ secrets.SQL_PASSWORD }} npm run start
+        run: npm install && SQL_PASSWORD=${{ secrets.SQL_PASSWORD }} npm run start
