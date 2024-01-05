@@ -7,8 +7,6 @@ Set up emails
 
 Set up timed jobs
 
-Set up database
-
 Deploy app
 
-Return out of stock flag
+Return out-of-stock flag

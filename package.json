@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,10 +14,13 @@
   "dependencies": {
     "axios": "^1.6.2",
     "cheerio": "^1.0.0-rc.12",
+    "env-cmd": "^10.1.0",
+    "mocha": "^10.2.0",
+    "mysql": "^2.18.1",
     "nightmare": "^3.0.2",
     "node-cron": "^3.0.2",
     "selenium": "^2.20.0",
     "selenium-webdriver": "^4.16.0",
-    "mocha": "^10.2.0"
+    "sql": "^0.78.0"
   }
 }
