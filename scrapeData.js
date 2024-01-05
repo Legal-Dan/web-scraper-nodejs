@@ -2,10 +2,19 @@ const cheerio = require("cheerio");
 const Nightmare = require('nightmare');
 const axios = require("axios");
 const nightmare = Nightmare();
-const {By, Builder} = require('selenium-webdriver');
+const {Builder} = require('selenium-webdriver');
 
-async function getHTML(url, identifier)  {
-    let price = await nightmare
+function getHTML(url, identifier)  {
+    if (url.includes("amazon.co.uk")) {
+        return getHTMLNightmare(url, identifier)
+    }
+    else {
+        return getHTMLSelenium(url, identifier)
+    }
+}
+
+async function getHTMLNightmare(url, identifier)  {
+    return await nightmare
         .goto(url)
         .wait(5000)
         .evaluate(function () {
@@ -14,9 +23,7 @@ async function getHTML(url, identifier)  {
         .end()
         .then(function (result) {
             return scrapePrice(result, identifier);
-        })
-
-    return price;
+        });
 }
 
 async function getHTMLAxios(url, identifier){
@@ -72,7 +79,5 @@ function scrapeDTRPGPrice(html, identifier){
 }
 
 module.exports = {
-    getHTML,
-    getHTMLAxios,
-    getHTMLSelenium
+    getHTML
 }
