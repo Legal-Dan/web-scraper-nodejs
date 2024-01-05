@@ -3,10 +3,12 @@ In web-scraper-nodejs run 'npm run start' from the terminal
 
 
 
-Not finding amazon price
-
 Set up emails
 
 Set up timed jobs
 
-Curently not iterating through data
+Set up database
+
+Deploy app
+
+Return out of stock flag

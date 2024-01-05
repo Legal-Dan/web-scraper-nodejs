@@ -4,7 +4,7 @@ const scrapeData = require("./scrapeData.js")
 const currencyStringToNumberInGbp = require("./currencyConversions.js");
 
 async function runApp() {
-    for (const entry of trackerData) {
+    for (let entry of trackerData) {
         const priceString = await scrapeData.getHTML(entry.productPage, entry.identifier);
         const currentPrice = await currencyStringToNumberInGbp(priceString);
         console.log("--------------")
