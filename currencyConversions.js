@@ -29,4 +29,4 @@ async function currencyStringToNumberInGbp(priceString) {
     }
 }
 
-module.exports = currencyStringToNumberInGbp;
+module.exports = {currencyStringToNumberInGbp};
