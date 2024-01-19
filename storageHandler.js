@@ -1,4 +1,5 @@
 const fs = require('node:fs');
+const emailHandler = require("./emailHandler");
 let priceData = []
 
 function writeToStorage(id, currentPrice)  {
@@ -16,6 +17,7 @@ function exportPriceData() {
             console.error(err);
         }
     });
+    emailHandler.exportData(priceData)
 }
 
 module.exports = {
