@@ -4,8 +4,7 @@ In web-scraper-nodejs run 'npm run start' from the terminal
 
 
 Set up emails
-- flag for price below certain amount
-- backup storage
+- use checkForLowPrice to send emails with link
 
 Deploy app
 
