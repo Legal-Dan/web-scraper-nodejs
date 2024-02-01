@@ -75,7 +75,11 @@ function scrapePrice(html, identifier){
 }
 
 function scrapeDTRPGPrice(html, identifier){
-    return html.split(identifier)[1].split(" ")[0].toString();
+    try {
+        return html.split(identifier)[1].split(" ")[0].toString()
+    } catch(err) {
+        console.log("Error in scraping data")
+    }
 }
 
 module.exports = {

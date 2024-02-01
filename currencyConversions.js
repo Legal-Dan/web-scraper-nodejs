@@ -15,17 +15,21 @@ async function getCurrentRates(currencyFrom){
 }
 
 async function currencyStringToNumberInGbp(priceString) {
-    const priceNumber = Number(priceString.replace(/[^0-9.-]+/g, ''));
-    if (priceString[0] == '£'){
-        return priceNumber;
-    } else if (priceString[0] == '€'){
-        const convertedPrice = await convertToGBP(priceNumber, 'EUR')
-        return convertedPrice
-    } else if (priceString[0] == '$'){
-        const convertedPrice = await convertToGBP(priceNumber, 'USD')
-        return convertedPrice
-    } else {
-        return "Foreign!"
+    try {
+        const priceNumber = Number(priceString.replace(/[^0-9.-]+/g, ''))
+        if (priceString[0] == '£'){
+            return priceNumber;
+        } else if (priceString[0] == '€'){
+            const convertedPrice = await convertToGBP(priceNumber, 'EUR')
+            return convertedPrice
+        } else if (priceString[0] == '$'){
+            const convertedPrice = await convertToGBP(priceNumber, 'USD')
+            return convertedPrice
+        } else {
+            return "Foreign!"
+        }
+    } catch (err) {
+        console.log("Price number not valid")
     }
 }
 

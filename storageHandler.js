@@ -20,7 +20,17 @@ function exportPriceData() {
     emailHandler.exportData(priceData)
 }
 
+function importPriceData() {
+    let rawData = require('/Users/dct5743/priceData.txt');
+    priceData = JSON.parse(rawData);
+}
+
+require.extensions['.txt'] = function (module, filename) {
+    module.exports = fs.readFileSync(filename, 'utf8');
+};
+
 module.exports = {
     writeToStorage: writeToStorage,
-    exportPriceData: exportPriceData
+    exportPriceData: exportPriceData,
+    importPriceData: importPriceData
 }
