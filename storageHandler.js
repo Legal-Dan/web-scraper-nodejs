@@ -2,8 +2,12 @@ const fs = require('node:fs');
 const emailHandler = require("./emailHandler");
 let priceData = []
 
-function writeToStorage(id, currentPrice)  {
-    priceData.push({ID: id, Timestamp: formattedDate(), Price: currentPrice});
+function writeToStorage(id, currentPrice) {
+    if (currentPrice != null) {
+        priceData.push({ID: id, Timestamp: formattedDate(), Price: currentPrice});
+    }else {
+        emailHandler.sendErrorEmail(id)
+    }
 }
 
 function formattedDate() {
