@@ -1,7 +1,7 @@
 const cheerio = require("cheerio");
 const Nightmare = require('nightmare');
-const axios = require("axios");
 const nightmare = Nightmare();
+const axios = require("axios");
 const {Builder} = require('selenium-webdriver');
 
 function getHTML(url, identifier)  {
