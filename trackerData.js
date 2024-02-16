@@ -22,13 +22,13 @@ function trackerData() {
             id: 4,
             name: "Tales of Aquatic Terror",
             productPage: "https://www.drivethrurpg.com/product/338827/Tales-of-Aquatic-Terror",
-            identifier: 'Softcover, Premium Color Book (8.5" x 11")</p><!----></div><div _ngcontent-serverapp-c130="" class="col-6 col-md-3 product-tile-book-size"></div><div _ngcontent-serverapp-c130="" class="col col-md-3 u-text-right"><!----><p _ngcontent-serverapp-c130="" class="u-text-bold is-inline product-tile-text-highlight cy-prc"> '
+            identifier: "Softcover, Premium Color Book"
         },
         {
             id: 5,
             name: "In Strange Seas",
             productPage: "https://preview.drivethrurpg.com/en/product/455060/in-strange-seas-the-regency-cthulhu-naval-compendium",
-            identifier: 'Hardcover, Standard Color Book (8.5" x 11")</p><!----></div><div _ngcontent-serverapp-c130="" class="col-6 col-md-3 product-tile-book-size"></div><div _ngcontent-serverapp-c130="" class="col col-md-3 u-text-right"><!----><!----><p _ngcontent-serverapp-c130="" class="is-inline product-tile-text-highlight cy-prc"> '
+            identifier: "Hardcover, Standard Color Book"
         }
     ]
 }

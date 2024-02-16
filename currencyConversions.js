@@ -26,7 +26,7 @@ async function currencyStringToNumberInGbp(priceString) {
             const convertedPrice = await convertToGBP(priceNumber, 'USD')
             return convertedPrice
         } else {
-            return "Foreign!"
+            console.error("First character of price string not recognised")
         }
     } catch (err) {
         console.log("Price number not valid")

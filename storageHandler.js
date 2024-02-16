@@ -43,7 +43,6 @@ function checkForLowPrice(id, currentPrice){
     }
     for (let i = 0; i < trackerData.length; i++) {
         let index = priceData.length-i-1
-        console.log(index)
         if (priceData[index]['ID'] == id && priceData[index]['Price'] == currentPrice) {
             return false
         }

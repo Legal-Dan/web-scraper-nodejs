@@ -57,7 +57,7 @@ async function getHTMLSelenium(url, identifier) {
 }
 
 function findPrice(html, identifier){
-    if (html.includes("_ngcontent-serverapp-c181")){
+    if (html.includes("https://www.drivethrurpg.com/product")){
         return scrapeDTRPGPrice(html, identifier)
     }
     else{
@@ -67,18 +67,25 @@ function findPrice(html, identifier){
 
 function scrapePrice(html, identifier){
     const $ = cheerio.load(html);
-    const price = $(identifier)
-        .first()
-        .text()
-        .trim();
-    return(price.toString());
+    try {
+        const price = $(identifier)
+            .first()
+            .text()
+            .trim();
+        return (price.toString());
+    }
+    catch (err) {
+        console.log("Error in scraping data")
+    }
 }
 
 function scrapeDTRPGPrice(html, identifier){
     try {
-        return html.split(identifier)[1].split(" ")[0].toString()
-    } catch(err) {
-        console.log("Error in scraping data")
+        let correctFormat = html.split(identifier)[1]
+        let findPrice = '$' + correctFormat.split('$')[1]
+        return findPrice.split(" ")[0]
+    } catch (err) {
+        console.log("Error in scraping DTRPG data")
     }
 }
 
