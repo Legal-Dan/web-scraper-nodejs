@@ -1,6 +1,5 @@
 const cheerio = require("cheerio");
 const Nightmare = require('nightmare');
-const nightmare = Nightmare();
 const axios = require("axios");
 const {Builder} = require('selenium-webdriver');
 
@@ -14,9 +13,11 @@ function getHTML(url, identifier)  {
 }
 
 async function getHTMLNightmare(url, identifier)  {
-    return await nightmare
+    const nightmare = Nightmare();
+    try {
+        return await nightmare
         .goto(url)
-        .wait(5000)
+        .wait(1000)
         .evaluate(function () {
             return document.body.outerHTML;
         })
@@ -24,6 +25,10 @@ async function getHTMLNightmare(url, identifier)  {
         .then(function (result) {
             return scrapePrice(result, identifier);
         });
+    }
+    catch (err) {
+        console.log("Error with Nightmare")
+    }
 }
 
 async function getHTMLAxios(url, identifier){
@@ -38,10 +43,15 @@ async function getHTMLAxios(url, identifier){
             return Promise.reject(error);
         }
     );
+    try {
     const { data } = await axios.get(url).catch(() => {
         console.log("Couldn't get the page ☹️");
     });
     return scrapePrice(data, identifier);
+    }
+    catch (err) {
+        console.log("Error with Axios")
+    }
 }
 
 async function getHTMLSelenium(url, identifier) {
@@ -51,14 +61,25 @@ async function getHTMLSelenium(url, identifier) {
         .setChromeOptions(new chrome.Options().headless())
         .build();
 
-    await driver.get(url);
-    const response = await driver.getPageSource();
-    return findPrice(response, identifier)
+    try {
+        await driver.get(url);
+        const response = await driver.getPageSource();
+        return findPrice(response, identifier)
+    }
+    catch (err) {
+        console.log("Error with Selenium")
+    }
 }
 
 function findPrice(html, identifier){
     if (html.includes("https://www.drivethrurpg.com/product")){
         return scrapeDTRPGPrice(html, identifier)
+    }
+    else if (html.includes("Nintendo Switch download software")){
+        return scrapeNintendoPrice(html, identifier)
+    }
+    else if (html.includes("https://freeleaguepublishing.com")){
+        return scrapeFreeLeaguePrice(html, identifier)
     }
     else{
         return scrapePrice(html, identifier)
@@ -86,6 +107,26 @@ function scrapeDTRPGPrice(html, identifier){
         return findPrice.split(" ")[0]
     } catch (err) {
         console.log("Error in scraping DTRPG data")
+    }
+}
+
+function scrapeNintendoPrice(html, identifier){
+    try {
+        let correctFormat = html.split(identifier)[1]
+        let findPrice = '£' + correctFormat.split(': ')[1]
+        return findPrice.split(",")[0]
+    } catch (err) {
+        console.log("Error in scraping Nintendo data")
+    }
+}
+
+
+function scrapeFreeLeaguePrice(html, identifier){
+    try {
+        let findPrice = html.split(identifier)[1]
+        return '£' + findPrice.split("</h4>")[0]
+    } catch (err) {
+        console.log("Error in scraping Free League data")
     }
 }
 

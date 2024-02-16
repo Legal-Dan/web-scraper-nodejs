@@ -59,6 +59,42 @@ function trackerData() {
             name: "Zgrozy: From Beyond scenario anthology",
             productPage: "https://www.drivethrurpg.com/product/451445/Zgrozy-From-Beyond--scenario-anthology-for-Call-of-Cthulhu",
             identifier: "Hardcover, Standard Color Book"
+        },
+        {
+            id: 11,
+            name: "Feet of Clay",
+            productPage: "https://www.amazon.co.uk/Feet-Clay-Discworld-Collection-Hardback/dp/1473200245/",
+            identifier: ".a-color-price"
+        },
+        {
+            id: 12,
+            name: "Mask of the Rose",
+            productPage: "https://www.nintendo.co.uk/Games/Nintendo-Switch-download-software/Mask-of-the-Rose-2381473.html?",
+            identifier: 'currency: "GBP"'
+        },
+        {
+            id: 13,
+            name: "Anchorhead",
+            productPage: "https://store.steampowered.com/app/726870/Anchorhead/",
+            identifier: ".game_purchase_price"
+        },
+        {
+            id: 14,
+            name: "Orbital Blues GM Screen",
+            productPage: "https://soulmuppet-store.co.uk/products/orbital-blues-gm-screen",
+            identifier: ".price-item"
+        },
+        {
+            id: 15,
+            name: "Building Better Worlds",
+            productPage: "https://freeleaguepublishing.com/shop/alien-rpg-2/building-better-worlds/",
+            identifier: '"variant-price gbp hidden">£ '
+        },
+        {
+            id: 16,
+            name: "The Alienist",
+            productPage: "https://www.wob.com/en-gb/books/caleb-carr/alienist/9780679417798",
+            identifier: ".price"
         }
     ]
 }
