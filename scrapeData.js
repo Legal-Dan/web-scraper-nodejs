@@ -4,7 +4,10 @@ const axios = require("axios");
 const {Builder} = require('selenium-webdriver');
 
 function getHTML(url, identifier)  {
-    if (url.includes("amazon.co.uk")) {
+    if (identifier.toString().includes("CERTIFICATE")) {
+        return '£5'
+    }
+    else if (url.includes("amazon.co.uk")) {
         return getHTMLNightmare(url, identifier)
     }
     else {
