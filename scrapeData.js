@@ -3,15 +3,17 @@ const Nightmare = require('nightmare');
 const axios = require("axios");
 const {Builder} = require('selenium-webdriver');
 
-function getHTML(url, identifier)  {
-    if (identifier.toString().includes("CERTIFICATE")) {
-        return '£5'
-    }
-    else if (url.includes("amazon.co.uk")) {
-        return getHTMLNightmare(url, identifier)
-    }
-    else {
-        return getHTMLSelenium(url, identifier)
+function getHTML(url, identifier) {
+    try {
+        if (identifier.toString().includes("CERTIFICATE")) {
+            return '£5'
+        } else if (url.includes("amazon.co.uk")) {
+            return getHTMLNightmare(url, identifier)
+        } else {
+            return getHTMLSelenium(url, identifier)
+        }
+    } catch (err) {
+        console.log("Data Error")
     }
 }
 
@@ -26,7 +28,12 @@ async function getHTMLNightmare(url, identifier)  {
         })
         .end()
         .then(function (result) {
-            return scrapePrice(result, identifier);
+            let priceString = scrapePrice(result, identifier);
+            if (priceString.startsWith("Only")){
+                return scrapePrice(result, ".a-price").removeDuplicates()
+            } else {
+                return priceString
+            }
         });
     }
     catch (err) {
@@ -132,6 +139,12 @@ function scrapeFreeLeaguePrice(html, identifier){
         console.log("Error in scraping Free League data")
     }
 }
+
+String.prototype.removeDuplicates = function removeDuplicates() {
+    let delimiter = this[0]
+    console.log(delimiter + this.split(delimiter)[1])
+    return delimiter + this.split(delimiter)[1]
+};
 
 module.exports = {
     getHTML

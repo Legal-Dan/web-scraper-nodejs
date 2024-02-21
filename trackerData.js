@@ -1,5 +1,5 @@
 function trackerData() {
-    //latest index 21
+    //latest index 30
 
     const amazonList = [
         {
@@ -7,7 +7,7 @@ function trackerData() {
             name: "Guards Guards!",
             productPage: "https://www.amazon.co.uk/Guards-Discworld-City-Watch-Collection/dp/1473200180/",
             identifier: ".a-color-price",
-            tags: ["Books", "Gifts"],
+            tags: ["Book", "Gifts"],
             imageUrl: "https://m.media-amazon.com/images/I/81-rwvAqVtL._SL1500_.jpg"
         },
         {
@@ -15,7 +15,7 @@ function trackerData() {
             name: "Feet of Clay",
             productPage: "https://www.amazon.co.uk/Feet-Clay-Discworld-Collection-Hardback/dp/1473200245/",
             identifier: ".a-color-price",
-            tags: ["Books", "Gifts"],
+            tags: ["Book", "Gifts"],
             imageUrl: "https://m.media-amazon.com/images/I/81PGKbXhwBL._SL1500_.jpg"
         },
         {
@@ -31,8 +31,48 @@ function trackerData() {
             name: "The Last Wish",
             productPage: "https://www.amazon.co.uk/Last-Wish-bestselling-inspired-Netflixs/dp/1399611399/",
             identifier: '.a-color-price',
-            tags: ["Books", "Gifts"],
+            tags: ["Book", "Gifts"],
             imageUrl: 'https://m.media-amazon.com/images/I/71wWCxSYxAL._SL1500_.jpg'
+        },
+        {
+            id: 22,
+            name: "Ghost of Tsushima",
+            productPage: "https://www.amazon.co.uk/Ghost-Tsushima-Directors-Cut-PS4/dp/B099B7JN4V/",
+            identifier: '.a-color-price',
+            tags: ["Physical Game", "Gifts"],
+            imageUrl: 'https://m.media-amazon.com/images/I/81IK2zIo0AS._AC_SX679_.jpg'
+        },
+        {
+            id: 23,
+            name: "The Narrow Road Between Desires",
+            productPage: "https://www.amazon.co.uk/Narrow-Road-Between-Desires-Kingkiller/dp/1399616226/",
+            identifier: '.a-color-price',
+            tags: ["Book", "Gifts"],
+            imageUrl: 'https://m.media-amazon.com/images/I/81Unhu8FMXL._SL1500_.jpg'
+        },
+        {
+            id: 24,
+            name: "Metroid Dread",
+            productPage: "https://www.amazon.co.uk/Nintendo-10007300-Metroid-Dread-Switch/dp/B097BP5DLQ/",
+            identifier: '.a-color-price',
+            tags: ["Physical Game", "Gifts"],
+            imageUrl: 'https://m.media-amazon.com/images/I/8176HX52haL._AC_SY879_.jpg'
+        },
+        {
+            id: 25,
+            name: "The Call of Cthulhu",
+            productPage: "https://www.amazon.co.uk/dp/1624650449/",
+            identifier: '.a-color-price',
+            tags: ["Book", "Gifts"],
+            imageUrl: 'https://m.media-amazon.com/images/I/81rHR4HYYSL._SL1500_.jpg'
+        },
+        {
+            id: 26,
+            name: "The Bone Key",
+            productPage: "https://www.amazon.co.uk/dp/1607012901/",
+            identifier: '.a-color-price',
+            tags: ["Book", "Gifts"],
+            imageUrl: 'https://m.media-amazon.com/images/I/71rN5AKwRnL._SY522_.jpg'
         }
     ]
 
@@ -50,7 +90,7 @@ function trackerData() {
             name: "The Dunwich Horror",
             productPage: "https://freeleaguepublishing.com/shop/the-call-of-cthulhu/the-dunwich-horror-illustrated-by-baranger/",
             identifier: 'variant-price gbp hidden">£ ',
-            tags: ["Books", "Gifts"],
+            tags: ["Book", "Gifts"],
             imageUrl: 'https://freeleaguepublishing.com/wp-content/uploads/2023/09/The-Dunwich-Horror-Packshot.jpg'
         },
         {
@@ -93,7 +133,7 @@ function trackerData() {
             name: "Subversive Sci-Fi",
             productPage: "https://www.drivethrurpg.com/product/428384/Subversive-SciFi",
             identifier: "Hardcover, B&amp;W Book",
-            tags: ["Books", "Gifts"],
+            tags: ["Book", "Gifts"],
             imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/3915/428384.png"
         },
         {
@@ -109,7 +149,7 @@ function trackerData() {
             name: "Transgressive Horror: Reflections on Scare Films that Broke the Rules",
             productPage: "https://www.drivethrurpg.com/product/378202/Transgressive-Horror-Reflections-on-Scare-Films-that-Broke-the-Rules",
             identifier: "Hardcover, B&amp;W Book",
-            tags: ["Books", "Gifts"],
+            tags: ["Book", "Gifts"],
             imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/3915/378202.jpg"
         },
         {
@@ -119,6 +159,14 @@ function trackerData() {
             identifier: "Hardcover, Standard Color Book",
             tags: ["RPG", "Gifts"],
             imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/2/451445.jpg"
+        },
+        {
+            id: 27,
+            name: "Bayt al Azif #2",
+            productPage: "https://www.drivethrurpg.com/product/246849/Bayt-al-Azif-2-A-magazine-for-Cthulhu-Mythos-roleplaying-games",
+            identifier: "Softcover, Standard Color Book",
+            tags: ["RPG", "Gifts"],
+            imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/12365/246849.jpg"
         }
     ]
 
@@ -172,9 +220,33 @@ function trackerData() {
             name: "The Alienist",
             productPage: "https://www.wob.com/en-gb/books/caleb-carr/alienist/9780679417798",
             identifier: ".price",
-            tags: ["Books", "Gifts"],
+            tags: ["Book", "Gifts"],
             imageUrl: "https://productimages.worldofbooks.com/0679417796.jpge"
         },
+        {
+            id: 28,
+            name: "Thousand Year Old Vampire",
+            productPage: "https://thousandyearoldvampire.com/collections/basic-book-selection/products/thousand-year-old-vampire",
+            identifier: ".price-item",
+            tags: ["RPG", "Gifts"],
+            imageUrl: "https://thousandyearoldvampire.com/cdn/shop/products/TYOVCover_1024x1024@2x.jpg?v=1609637742"
+        },
+        // {
+        //     id: 29,
+        //     name: "Communist Cats - Revolution Expansion",
+        //     productPage: "https://www.etsy.com/listing/895071892/communist-cats-revolution-expansion",
+        //     identifier: ".price-only",
+        //     tags: ["Board Game", "Gifts"],
+        //     imageUrl: "https://i.etsystatic.com/19513687/r/il/5c86cb/2678233892/il_1588xN.2678233892_fakb.jpg"
+        // },
+        // {
+        //     id: 30,
+        //     name: "Kvothe and the Cthaeh Travel Poster",
+        //     productPage: "https://www.etsy.com/uk/listing/1237324543/kvothe-and-the-cthaeh-travel-poster?variation0=3501669972&variation1=3516774119",
+        //     identifier: ".price-only",
+        //     tags: ["Decoration", "Gifts"],
+        //     imageUrl: "https://i.etsystatic.com/35823251/r/il/616ca8/4048716637/il_1588xN.4048716637_q12l.jpg"
+        // }
     ]
 
     const certificateList = [
@@ -188,7 +260,16 @@ function trackerData() {
         }
     ]
 
-    return amazonList.concat(freeLeagueList, dtrpgList, nintendoList, otherList, certificateList)
+    const emptyList = []
+
+    return emptyList.concat(
+        amazonList,
+        freeLeagueList,
+        dtrpgList,
+        nintendoList,
+        otherList,
+        certificateList
+    );
 }
 
 module.exports = trackerData();

@@ -5,8 +5,7 @@ let priceData = []
 
 function writeToStorage(id, currentPrice) {
     if (currentPrice != null) {
-        checkForLowPrice(id, currentPrice)
-        priceData.push({ID: id, Timestamp: formattedDate(), Price: currentPrice});
+        priceData.push({ID: id, Timestamp: formattedDate(), Price: currentPrice, lowPrice: findLowPrice(id, currentPrice)});
     }else {
         emailHandler.sendErrorEmail(id)
     }
@@ -35,19 +34,38 @@ require.extensions['.txt'] = function (module, filename) {
     module.exports = fs.readFileSync(filename, 'utf8');
 };
 
-function checkForLowPrice(id, currentPrice){
-    for (let i = 0; i < priceData.length; i++) {
-        if (priceData[i]['ID'] == id && priceData[i]['Price'] < currentPrice) {
-            return false
-        }
+function findLowPrice(id, currentPrice){
+    let currentLowPrice = findLowPriceByID(id)
+
+    if (currentLowPrice == null){
+        return currentPrice
+    } else if (currentLowPrice > currentPrice){
+        console.log(`${id} LOW`)
+        return currentPrice
+    } else if (currentLowPrice == currentPrice && currentPrice != findYesterdaysPriceByID(id)){
+        console.log(`${id} LOW`)
+        return currentPrice
+    } else {
+        return currentLowPrice
     }
+}
+
+function findLowPriceByID(id){
     for (let i = 0; i < trackerData.length; i++) {
         let index = priceData.length-i-1
-        if (priceData[index]['ID'] == id && priceData[index]['Price'] == currentPrice) {
-            return false
+        if (priceData[index]['ID'] == id && priceData[index]['lowPrice'] != null) {
+            return priceData[index]['lowPrice']
         }
     }
-    console.log(`${id} LOW`)
+}
+
+function findYesterdaysPriceByID(id){
+    for (let i = 0; i < trackerData.length; i++) {
+        let index = priceData.length-i-1
+        if (priceData[index]['ID'] == id && priceData[index]['lowPrice'] != null) {
+            return priceData[index]['Price']
+        }
+    }
 }
 
 module.exports = {
