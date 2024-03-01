@@ -6,7 +6,7 @@ const otherList = require("./data/other.js");
 const certificateList = require("./data/certificate.js");
 
 function trackerData() {
-    //latest index 30
+    //latest index 32
     const emptyList = []
 
     return emptyList.concat(

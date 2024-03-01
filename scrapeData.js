@@ -142,7 +142,6 @@ function scrapeFreeLeaguePrice(html, identifier){
 
 String.prototype.removeDuplicates = function removeDuplicates() {
     let delimiter = this[0]
-    console.log(delimiter + this.split(delimiter)[1])
     return delimiter + this.split(delimiter)[1]
 };
 

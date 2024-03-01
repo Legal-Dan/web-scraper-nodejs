@@ -62,6 +62,22 @@ const dtrpgList = [
         identifier: "Softcover, Standard Color Book",
         tags: ["RPG", "Gifts"],
         imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/12365/246849.jpg"
+    },
+    {
+        id: 31,
+        name: "Convicts & Cthulhu: The Misery Archive",
+        productPage: "https://www.drivethrurpg.com/product/406492/Convicts--Cthulhu-The-Misery-Archive-Bundle?manufacturers_id=5143",
+        identifier: "PDF",
+        tags: ["RPG", "Tracking"],
+        imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/5143/406492.jpg"
+    },
+    {
+        id: 32,
+        name: "Host and Hostility",
+        productPage: "https://www.drivethrurpg.com/product/417681/Host-and-Hostility-Three-Regency-Call-of-Cthulhu-Scenarios",
+        identifier: "Softcover, Standard Color Book",
+        tags: ["RPG", "Gifts"],
+        imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/2/417681.jpg"
     }
 ]
 
