@@ -1,9 +1,8 @@
 const emailjs = require('@emailjs/browser');
-const env = require("./config/dev");
 const trackerData = require("./trackerData");
 
 function triggerEmail(templateID, templateParams, successMessage, errorMessage){
-    emailjs.send('PriceTracker', templateID, templateParams, env.PUBLIC_KEY())
+    emailjs.send('PriceTracker', templateID, templateParams, process.env.PUBLIC_KEY)
         .then(function(response) {
             console.log(successMessage);
         }, function(error) {
