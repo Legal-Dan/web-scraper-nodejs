@@ -17,7 +17,7 @@ function formattedDate() {
 
 function exportPriceData() {
     console.log("Exporting...")
-    fs.writeFile('/Users/dct5743/priceData.txt', JSON.stringify(priceData), err => {
+    fs.writeFile('./priceData.txt', JSON.stringify(priceData), err => {
         if (err) {
             console.error(err);
         }
@@ -26,7 +26,7 @@ function exportPriceData() {
 }
 
 function importPriceData() {
-    let rawData = require('/Users/dct5743/priceData.txt');
+    let rawData = require('./priceData.txt');
     priceData = JSON.parse(rawData);
 }
 
