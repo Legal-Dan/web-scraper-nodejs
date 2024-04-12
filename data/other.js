@@ -62,7 +62,39 @@ const otherList = [
     //     identifier: ".price-only",
     //     tags: ["Decoration", "Gifts"],
     //     imageUrl: "https://i.etsystatic.com/35823251/r/il/616ca8/4048716637/il_1588xN.4048716637_q12l.jpg"
-    // }
+    // },
+    {
+        id: 33,
+        name: "The Lord of the Rings",
+        productPage: "https://www.foliosociety.com/uk/the-lord-of-the-rings.html",
+        identifier: "product-price-1063",
+        tags: ["Book", "Gifts"],
+        imageUrl: "https://www.foliosociety.com/media/catalog/product/l/t/ltr_book.png?quality=80&fit=bounds&height=700&width=700&canvas=700:700"
+    },
+    {
+        id: 34,
+        name: "The Hobbit",
+        productPage: "https://www.foliosociety.com/uk/the-hobbit.html",
+        identifier: "product-price-22",
+        tags: ["Book", "Gifts"],
+        imageUrl: "https://www.foliosociety.com/media/catalog/product/h/o/hob_book_2.png?quality=80&fit=bounds&height=700&width=700&canvas=700:700"
+    },
+    {
+        id: 35,
+        name: "Weird Tales",
+        productPage: "https://www.foliosociety.com/uk/weird-tales.html",
+        identifier: "product-price-4769",
+        tags: ["Book", "Gifts"],
+        imageUrl: "https://www.foliosociety.com/media/catalog/product/w/r/wrdt_bookshot_1.png?quality=80&fit=bounds&height=700&width=700&canvas=700:700"
+    },
+    {
+        id: 36,
+        name: "The Call of Cthulhu & Other Weird Stories",
+        productPage: "https://www.foliosociety.com/uk/the-call-of-cthulhu-other-weird-stories-core.html",
+        identifier: "product-price-343",
+        tags: ["Book", "Gifts"],
+        imageUrl: "https://www.foliosociety.com/media/catalog/product/c/l/clu_bookshot.png?quality=80&fit=bounds&height=700&width=700&canvas=700:700"
+    }
 ]
 
 module.exports = otherList;

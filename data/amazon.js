@@ -70,6 +70,14 @@ const amazonList = [
         identifier: '.a-color-price',
         tags: ["Book", "Gifts"],
         imageUrl: 'https://m.media-amazon.com/images/I/71rN5AKwRnL._SY522_.jpg'
+    },
+    {
+        id: 37,
+        name: "Illborn",
+        productPage: "https://www.amazon.co.uk/dp/1800462824",
+        identifier: '.a-color-price',
+        tags: ["Book", "Gifts"],
+        imageUrl: 'https://m.media-amazon.com/images/I/619yScItEML._SY385_.jpg'
     }
 ]
 

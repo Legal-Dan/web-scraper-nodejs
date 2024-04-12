@@ -78,6 +78,14 @@ const dtrpgList = [
         identifier: "Softcover, Standard Color Book",
         tags: ["RPG", "Gifts"],
         imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/2/417681.jpg"
+    },
+    {
+        id: 42,
+        name: "The Last Dance of Lola Montez",
+        productPage: "https://preview.drivethrurpg.com/en/product/455049/The-Last-Dance-of-Lola-Montez-A-Call-of-Cthulhu-Modern-Adventure",
+        identifier: "Softcover, Standard Color Book",
+        tags: ["RPG", "Gifts"],
+        imageUrl: "https://d1vzi28wh99zvq.cloudfront.net/images/2/455049.png"
     }
 ]
 

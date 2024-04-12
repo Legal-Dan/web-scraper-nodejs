@@ -68,7 +68,7 @@ async function getHTMLSelenium(url, identifier) {
     const chrome = require('selenium-webdriver/chrome');
     let driver = new Builder()
         .forBrowser('chrome')
-        .setChromeOptions(new chrome.Options().headless())
+        .setChromeOptions(new chrome.Options())
         .build();
 
     try {
@@ -90,6 +90,9 @@ function findPrice(html, identifier){
     }
     else if (html.includes("https://freeleaguepublishing.com")){
         return scrapeFreeLeaguePrice(html, identifier)
+    }
+    else if (html.includes("https://www.foliosociety.com/")){
+        return scrapeFolioPrice(html, identifier)
     }
     else{
         return scrapePrice(html, identifier)
@@ -117,6 +120,16 @@ function scrapeDTRPGPrice(html, identifier){
         return findPrice.split(" ")[0]
     } catch (err) {
         console.log("Error in scraping DTRPG data")
+    }
+}
+
+function scrapeFolioPrice(html, identifier){
+    try {
+        let correctFormat = html.split(identifier)[1]
+        let findPrice = '£' + correctFormat.split('£')[1]
+        return findPrice.split(" ")[0]
+    } catch (err) {
+        console.log("Error in scraping Folio data")
     }
 }
 
